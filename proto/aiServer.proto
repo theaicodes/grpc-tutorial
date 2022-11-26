@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package ModelServer.v1;
+
+message RequestExample {
+    string title = 1;
+    string content = 2;
+}
+
+message pingMsg {
+    string msg = 1;
+}
+
+message status {
+    int32 code = 1;
+    string msg = 2;
+}
+
+service AIModelServer {
+    // A request to run the model on an instance.
+    rpc processInstance (RequestExample) returns (status);
+    // Ping the server to check if it's alive.
+    rpc ping (pingMsg) returns (status);
+}

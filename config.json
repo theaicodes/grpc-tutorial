@@ -1,0 +1,20 @@
+{
+    "server" : {
+        "address" : "127.0.0.1",
+        "port" : "4002",
+        "max_workers" : 2
+    },
+    "aIModelServer" : {
+        "model_config": {
+            "model_name": "t5",
+            "gen_cfg": {
+                "encoder_no_repeat_ngram_size":7,
+                "diversity_penalty":0.1,
+                "length_penalty":5.0,
+                "num_beams":6,
+                "num_beam_groups":2,
+                "num_return_sequences": 6
+        }
+        }
+    }  
+}
